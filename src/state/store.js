@@ -16,7 +16,7 @@ import { firebaseConfig } from '../api/firebase/config';
 
 // react-redux-firebase config
 const rrfConfig = {
-  //   userProfile: 'users',
+  userProfile: 'users',
   // useFirestoreForProfile: true // Firestore for Profile instead of Realtime DB
 };
 

@@ -4,11 +4,17 @@ import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Store } from './state/store';
+import { AuthIsLoaded } from './components/authentication/authIsLoaded';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
     <Store>
-      <App />
+      <AuthIsLoaded>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AuthIsLoaded>
     </Store>
   </React.StrictMode>,
   document.getElementById('root')
