@@ -1,0 +1,129 @@
+//Centering something on the screen, you need:
+// class="full-width full-height flex align-center"
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+// Initiate the flexbox
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex {
+  @extend %flex;
+}
+
+.flex-column {
+  flex-direction: column;
+  @extend %flex;
+}
+
+.flex-row {
+  flex-direction: row;
+  @extend %flex;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse;
+  @extend %flex;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+  @extend %flex;
+}
+
+// Alignment of all items in the flex-container, applied to main (justify) and
+// cross (align) axis
+
+.align-center {
+  justify-content: center;
+  align-content: center;
+}
+
+.align-start {
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.align-end {
+  justify-content: flex-end;
+  align-content: flex-end;
+}
+
+.align-even {
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+// Item alignment in a single line over the cross-axis
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: end;
+}
+
+.items-start {
+  align-items: start;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+// individual alignment of items over the cross axis
+
+.self-center {
+  align-self: center;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-start {
+  align-self: flex-start;
+}
+
+.self-stretch {
+  align-self: stretch;
+}
+
+// grow & shrink
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-no-grow {
+  flex-grow: 0;
+}
+
+.flex-no-shrink {
+  flex-shrink: 1;
+}
+
+.flex-none {
+  flex: none;
+}
