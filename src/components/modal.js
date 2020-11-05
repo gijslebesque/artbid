@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Cross from './icons/cross';
 
 export default function Modal({
   title,
@@ -11,7 +12,7 @@ export default function Modal({
   const [style, setStyle] = useState({
     opacity: 0,
   });
-  const [m, toggleModal] = useState(showDirect);
+  const [modal, toggleModal] = useState(showDirect);
 
   useEffect(() => {
     if (showModal) {
@@ -35,11 +36,14 @@ export default function Modal({
 
   return (
     <>
-      {m && (
-        <div className="modal flex align-center" style={style}>
-          <div className="modal--content">
-            <p onClick={onCloseModal}>Close</p>
-
+      {modal && (
+        <div
+          className="modal flex align-center"
+          style={style}
+          onClick={onCloseModal}
+        >
+          <div className="modal__content">
+            <Cross onClick={toggleModal} className="float-right" />
             <h1>{title}</h1>
             <p>{description}</p>
             {Component && <Component />}

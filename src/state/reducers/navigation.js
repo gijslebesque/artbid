@@ -3,7 +3,6 @@ const initState = {
 };
 
 export const navigationReducer = (state = initState, { type, payload }) => {
-  console.log(type);
   switch (type) {
     case 'toggleLogin': {
       return {

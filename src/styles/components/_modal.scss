@@ -6,7 +6,8 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 300ms ease-in-out 0s;
-  &--content {
+  &__content {
+    position: relative;
     padding: 20px 40px 40px;
     border-radius: 5px;
     background: white;
