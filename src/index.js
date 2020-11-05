@@ -4,7 +4,7 @@ import './styles/main.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Store } from './state/store';
-import { AuthIsLoaded } from './components/authentication/authIsLoaded';
+import { AuthIsLoaded } from './components/auth/authIsLoaded';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(

@@ -12,7 +12,7 @@ export default function Todos() {
     return firebase.push('users', sampleTodo);
   }
 
-  const todos = useSelector((state) => state.firebase.ordered.todos);
+  //   const todos = useSelector((state) => state.firebase.ordered.todos);
   const p = useSelector((state) => state.firebase.profile);
   console.log(p);
   return (
