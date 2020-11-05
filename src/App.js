@@ -16,7 +16,6 @@ export default function App() {
       <Nav></Nav>
       <Modal
         title="Login"
-        description="Welcome back"
         component={Login}
         showModal={showLogin}
         onCloseModal={closeLoginModal}

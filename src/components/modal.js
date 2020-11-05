@@ -43,7 +43,7 @@ export default function Modal({
   return (
     <>
       {modal && (
-        <div className="modal flex align-center" style={style}>
+        <div className="modal flex align-center animate" style={style}>
           <div className="modal__content" ref={ref}>
             <Cross onClick={toggleModal} className="float-right" />
             <h3>{title}</h3>

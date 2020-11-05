@@ -20,24 +20,28 @@ function LoginPage() {
 
   return (
     <>
+      <p>Please provide your email and password.</p>
       <form>
+        <label htmlFor="">Email:</label>
         <input
           type="text"
           name=""
-          laceholder="Email"
+          placeholder="Email"
           value={email}
-          onChange={({ value }) => setEmail(value)}
+          onChange={({ target: { value } }) => setEmail(value)}
         />
+        <label htmlFor="">Password:</label>
         <input
           type="password"
           name=""
-          laceholder="Password"
+          placeholder="Password"
           value={password}
-          onChange={({ value }) => setPassword(value)}
+          onChange={({ target: { value } }) => setPassword(value)}
         />
+        <button className="btn">Sign in</button>
       </form>
 
-      <h3>Login via Google</h3>
+      <p>Or</p>
 
       <GoogleButton onClick={loginWithGoogle} />
     </>
