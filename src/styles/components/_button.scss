@@ -7,4 +7,14 @@
     color: white;
     background: black;
   }
+
+  &--reverse {
+    color: white;
+    background: black;
+  }
+
+  &--reverse:hover {
+    color: black;
+    background: white;
+  }
 }

@@ -33,11 +33,18 @@ export default function Home() {
         <div className="flex items-center space-between">
           <div className="col__text">
             <h2>Artworks</h2>
-            <SlideToRight element={firstRow}>
+            <p className="margin-left-md">
+              See the top artworks of the moment.
+            </p>
+            <AnimateOnView
+              element={firstRow}
+              nameAnimation="slide-to-right"
+              className="hover margin-bottom-l"
+            >
               <Link to="/artworks">
                 View <span>&#10230;</span>
               </Link>
-            </SlideToRight>
+            </AnimateOnView>
           </div>
           <div className="col__image">
             <img src={artworkImg} alt="" />
@@ -48,11 +55,19 @@ export default function Home() {
         <div className="flex items-center space-between">
           <div className="col__text">
             <h2>Artists</h2>
-            <SlideToRight element={secondRow}>
+            <p className="margin-left-md">
+              See our trending artists of the moment.
+            </p>
+
+            <AnimateOnView
+              element={secondRow}
+              nameAnimation="slide-to-right"
+              className="hover margin-bottom-l"
+            >
               <Link to="/artists">
                 View <span>&#10230;</span>
               </Link>
-            </SlideToRight>
+            </AnimateOnView>
           </div>
           <div className="col__image">
             <img src={artistImg} alt="" />
@@ -63,22 +78,25 @@ export default function Home() {
   );
 }
 
-const SlideToRight = ({ element, children }) => {
+const AnimateOnView = ({
+  element,
+  nameAnimation,
+  classNames = '',
+  children,
+}) => {
   const [className, setClassName] = useState('');
-  const slideRight = () => {
+  const slide = () => {
     if (element.current && isInViewport(element.current))
-      setClassName('slide-to-right');
+      setClassName(nameAnimation);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', slideRight);
+    window.addEventListener('scroll', slide);
     return () => {
-      document.removeEventListener('scroll', slideRight);
+      document.removeEventListener('scroll', slide);
     };
   });
   return (
-    <span className={`${className} animate hover margin-bottom-l`}>
-      {children}
-    </span>
+    <span className={`${className} ${classNames} animate`}>{children}</span>
   );
 };

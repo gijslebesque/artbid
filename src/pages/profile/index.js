@@ -1,19 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirebase } from 'react-redux-firebase';
+import Upload from '../../components/upload';
 
 function Profile() {
-  const firebase = useFirebase();
-  const auth = useSelector((state) => state.firebase.auth);
-
-  const logOut = () => {
-    return firebase.logout();
-  };
+  const { displayName, email, photoURL, uid } = useSelector(
+    (state) => state.firebase.auth
+  );
 
   return (
-    <div className="container">
-      <pre>{JSON.stringify(auth, null, 2)}</pre>
-      <button onClick={logOut}>logout</button>
+    <div className="container flex">
+      <div className="card margin-l">
+        <img className="card__image--small" src={photoURL} />
+        <p>{displayName}</p>
+        <p>{email}</p>
+        <button className="btn">Edit</button>
+      </div>
+      <Upload uid={uid} />
     </div>
   );
 }

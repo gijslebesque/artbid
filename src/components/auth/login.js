@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useFirebase } from 'react-redux-firebase';
 import GoogleButton from 'react-google-button';
 import { useDispatch } from 'react-redux';
+import { TOGGLE_LOGIN } from '../../state/types';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ function LoginPage() {
       provider: 'google',
       type: 'popup',
     });
-    if (profile) return dispatch({ type: 'toggleLogin' });
+    if (profile) return dispatch({ type: TOGGLE_LOGIN });
   };
 
   return (

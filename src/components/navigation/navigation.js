@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFirebase, isEmpty } from 'react-redux-firebase';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { TOGGLE_LOGIN } from '../state/types';
+import { TOGGLE_LOGIN } from '../../state/types';
+import { Burger } from './burger';
+import SideMenu from './sideMenu';
 
 export default function Navigation() {
   const { auth } = useSelector((state) => state.firebase);
-  const { displayName } = auth;
-
   const dispatch = useDispatch();
-
   const firebase = useFirebase();
+  const [open, setOpen] = useState(false);
 
   const logOut = () => {
     return firebase.logout();
   };
 
-  const isLoggedIn = isEmpty(auth);
-
-  const showLogin = () => {
+  const showLogin = (e) => {
+    e.stopPropagation();
     return dispatch({ type: TOGGLE_LOGIN });
   };
+
+  const { displayName } = auth;
+  const isLoggedIn = isEmpty(auth);
 
   return (
     <nav className="flex space-between items-center padding-x-l padding-md">
@@ -30,9 +32,9 @@ export default function Navigation() {
         </Link>
       </div>
 
-      <div>
+      <div className="flex items-center">
         {isLoggedIn ? (
-          <button className="btn" onClick={showLogin}>
+          <button className="btn margin-right-l" onClick={showLogin}>
             Login
           </button>
         ) : (
@@ -40,11 +42,13 @@ export default function Navigation() {
             <Link className="margin-right-l" to="/profile">
               {displayName}
             </Link>
-            <button className="btn" onClick={logOut}>
+            <button className="btn margin-right-l" onClick={logOut}>
               Logout
             </button>
           </>
         )}
+        <Burger open={open} setOpen={setOpen} />
+        <SideMenu open={open} setOpen={setOpen} />
       </div>
     </nav>
   );

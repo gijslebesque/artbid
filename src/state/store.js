@@ -23,6 +23,7 @@ const rrfConfig = {
 
 // Initialize firebase instance
 firebase.initializeApp(firebaseConfig);
+firebase.storage();
 
 // Add firebase to reducers
 const rootReducer = combineReducers({

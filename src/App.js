@@ -1,6 +1,6 @@
 import Router from './router';
 import Modal from './components/modal';
-import Nav from './router/navigation';
+import Nav from './components/navigation/navigation';
 import Login from './components/auth/login';
 import { useSelector, useDispatch } from 'react-redux';
 import { TOGGLE_LOGIN } from './state/types';
@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <Nav></Nav>
+      <Nav />
       <Modal
         title="Login"
         component={Login}
