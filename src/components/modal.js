@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Cross from './icons/cross';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 export default function Modal({
   title,
@@ -13,6 +14,11 @@ export default function Modal({
     opacity: 0,
   });
   const [modal, toggleModal] = useState(showDirect);
+  const ref = useRef();
+
+  useOutsideClick(ref, () => {
+    onCloseModal();
+  });
 
   useEffect(() => {
     if (showModal) {
@@ -37,12 +43,8 @@ export default function Modal({
   return (
     <>
       {modal && (
-        <div
-          className="modal flex align-center"
-          style={style}
-          onClick={onCloseModal}
-        >
-          <div className="modal__content">
+        <div className="modal flex align-center" style={style}>
+          <div className="modal__content" ref={ref}>
             <Cross onClick={toggleModal} className="float-right" />
             <h3>{title}</h3>
             <p>{description}</p>
