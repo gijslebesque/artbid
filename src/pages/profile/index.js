@@ -11,10 +11,10 @@ function Profile() {
   };
 
   return (
-    <>
+    <div className="container">
       <pre>{JSON.stringify(auth, null, 2)}</pre>
       <button onClick={logOut}>logout</button>
-    </>
+    </div>
   );
 }
 

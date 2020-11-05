@@ -1,10 +1,12 @@
+import { TOGGLE_LOGIN } from '../types';
+
 const initState = {
   showLogin: false,
 };
 
 export const navigationReducer = (state = initState, { type, payload }) => {
   switch (type) {
-    case 'toggleLogin': {
+    case TOGGLE_LOGIN: {
       return {
         ...state,
         showLogin: !state.showLogin,

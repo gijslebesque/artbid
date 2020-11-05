@@ -1,0 +1,27 @@
+.circles {
+  z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  &__circle {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+
+    &--mint {
+      transform: translate(145%, 50%);
+      background-color: #ade6d0;
+    }
+    &--egg {
+      transform: translateX(10%);
+
+      background-color: #f1f0cf;
+    }
+    &--rose {
+      transform: translateX(-10%);
+      background-color: #ebceed;
+    }
+  }
+}

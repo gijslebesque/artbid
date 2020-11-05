@@ -44,7 +44,7 @@ export default function Modal({
         >
           <div className="modal__content">
             <Cross onClick={toggleModal} className="float-right" />
-            <h1>{title}</h1>
+            <h3>{title}</h3>
             <p>{description}</p>
             {Component && <Component />}
           </div>

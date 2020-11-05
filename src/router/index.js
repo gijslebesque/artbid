@@ -4,13 +4,13 @@ import { routes } from './config';
 export default function Router() {
   return (
     <Switch>
-      {routes.map((r) => (
-        <R {...r} />
+      {routes.map(({ name, ...rest }) => (
+        <RouteItem key={name} name={name} {...rest} />
       ))}
     </Switch>
   );
 }
 
-const R = ({ path, component: Component, ...rest }) => (
+const RouteItem = ({ path, component: Component, ...rest }) => (
   <Route path={path} render={(props) => <Component {...props} {...rest} />} />
 );
