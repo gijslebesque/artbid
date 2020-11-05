@@ -5,6 +5,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/storage';
+import { navigationReducer } from './reducers/navigation';
 
 import { createStore, combineReducers } from 'redux';
 import {
@@ -26,6 +27,7 @@ firebase.initializeApp(firebaseConfig);
 // Add firebase to reducers
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
+  nav: navigationReducer,
 });
 
 // Create store with reducers and initial state
