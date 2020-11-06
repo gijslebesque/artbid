@@ -12,15 +12,15 @@
 
     &--mint {
       transform: translate(145%, 50%);
-      background-color: #ade6d0;
+      background-color: $primary-secondary;
     }
     &--egg {
       transform: translateX(10%);
-      background-color: #f1f0cf;
+      background-color: $primary-colour;
     }
     &--rose {
       transform: translateX(-10%);
-      background-color: #ebceed;
+      background-color: $primary-tertiary;
     }
   }
 }

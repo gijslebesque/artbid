@@ -7,7 +7,7 @@ const Menu = ({ open, setOpen }) => {
   useOutsideClick(ref, () => setOpen(false));
 
   const style = {
-    transform: open ? 'translateX(0%)' : 'translateX(-100%)',
+    transform: open ? 'translateX(0%)' : 'translateX(100%)',
   };
 
   return (

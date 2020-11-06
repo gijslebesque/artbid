@@ -4,6 +4,7 @@ import Nav from './components/navigation/navigation';
 import Login from './components/auth/login';
 import { useSelector, useDispatch } from 'react-redux';
 import { TOGGLE_LOGIN } from './state/types';
+import Footer from './components/footer';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export default function App() {
         onCloseModal={closeLoginModal}
       />
       <Router />
+      <Footer />
     </>
   );
 }

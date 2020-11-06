@@ -25,11 +25,9 @@ export default function Navigation() {
   const isLoggedIn = isEmpty(auth);
 
   return (
-    <nav className="flex space-between items-center padding-x-l padding-md">
+    <nav className="flex space-between items-center padding-md">
       <div className="logo">
-        <Link className="margin-right-l" to="/">
-          Bonjour
-        </Link>
+        <Link to="/">Bonjour</Link>
       </div>
 
       <div className="flex items-center">

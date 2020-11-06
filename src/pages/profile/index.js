@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useFirebase } from 'react-redux-firebase';
 import Upload from '../../components/upload';
 
 function Profile() {
@@ -9,15 +8,23 @@ function Profile() {
   );
 
   return (
-    <div className="container flex">
-      <div className="card margin-l">
-        <img className="card__image--small" src={photoURL} />
-        <p>{displayName}</p>
-        <p>{email}</p>
-        <button className="btn">Edit</button>
+    <>
+      <div className="container flex padding-md">
+        <div>
+          <h3>
+            Bonjour, <br /> {displayName}
+          </h3>
+          <img className="card__image--small" src={photoURL} />
+
+          <p>{email}</p>
+          <button className="btn">Edit</button>
+        </div>
       </div>
-      <Upload uid={uid} />
-    </div>
+      <div className="flex-column padding-md">
+        <h3>Upload</h3>
+        <Upload uid={uid} />
+      </div>
+    </>
   );
 }
 
