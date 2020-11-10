@@ -20,7 +20,7 @@ export default function Upload({ uid }) {
   const [files, setFile] = useState([]);
 
   async function fileUpload(file) {
-    return await firebase.uploadFiles(filesPath, file, filesPath);
+    return await firebase.uploadFiles(filesPath, [file], filesPath);
   }
 
   function onFileDelete(file, key) {

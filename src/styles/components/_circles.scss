@@ -10,17 +10,17 @@
     height: 15vw;
     border-radius: 50%;
 
-    &--mint {
-      transform: translate(145%, 50%);
-      background-color: $primary-secondary;
-    }
     &--egg {
       transform: translateX(10%);
       background-color: $primary-colour;
     }
+    &--mint {
+      transform: translate(145%, 50%);
+      background-color: $secondary-colour;
+    }
     &--rose {
       transform: translateX(-10%);
-      background-color: $primary-tertiary;
+      background-color: $tertiary-colour;
     }
   }
 }
