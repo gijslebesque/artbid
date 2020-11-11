@@ -20,11 +20,8 @@ export default function Upload({ uid }) {
   const [files, setFile] = useState([]);
 
   async function fileUpload(file) {
-    return await firebase.uploadFiles(filesPath, [file], filesPath);
-  }
-
-  function onFileDelete(file, key) {
-    return firebase.deleteFile(file.fullPath, `${filesPath}/${key}`);
+    await firebase.uploadFiles(filesPath, [file], filesPath);
+    deleteFile(file);
   }
 
   const dropFile = (file) => {
@@ -63,11 +60,11 @@ const ImgCard = ({ file, onDelete, fileUpload, initSrc }) => {
 
   useEffect(() => {
     if (!initSrc) readURL(file, setSrc);
-  });
+  }, []); //eslint-disable-line
 
   return (
     <div className="card">
-      <img src={src} alt="" className="card__image" />
+      <img src={src} alt={file.name} className="card__image" />
       <p>{file.name}</p>
 
       <div className="flex-column">
